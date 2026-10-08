@@ -1,0 +1,209 @@
+{
+    "pig_iron": {
+        "composition_mass_percent": {
+            "fe": 94.36,
+            "c": 4.00,
+            "si": 1.00,
+            "mn": 0.50,
+            "p": 0.10,
+            "s": 0.04,
+            "cao": 0.00,
+            "sio2": 0.00,
+            "al2o3": 0.00,
+            "mgo": 0.00,
+            "feo": 0.00
+        }
+    },
+
+    "shredded": {
+        "composition_mass_percent": {
+            "fe": 98.57,
+            "c": 0.28,
+            "si": 0.38,
+            "mn": 0.60,
+            "p": 0.03,
+            "s": 0.04,
+            "cao": 0.00,
+            "sio2": 0.00,
+            "al2o3": 0.00,
+            "mgo": 0.00,
+            "feo": 0.10
+        }
+    },
+
+    "recovered_scrap": {
+        "composition_mass_percent": {
+            "fe": 98.84,
+            "c": 0.31,
+            "si": 0.18,
+            "mn": 0.50,
+            "p": 0.03,
+            "s": 0.04,
+            "cao": 0.00,
+            "sio2": 0.00,
+            "al2o3": 0.00,
+            "mgo": 0.00,
+            "feo": 0.10
+        }
+    },
+
+    "automotive_stamping_bundles": {
+        "composition_mass_percent": {
+            "fe": 99.09,
+            "c": 0.05,
+            "si": 0.22,
+            "mn": 0.43,
+            "p": 0.02,
+            "s": 0.01,
+            "cao": 0.00,
+            "sio2": 0.00,
+            "al2o3": 0.00,
+            "mgo": 0.00,
+            "feo": 0.10
+        }
+    },
+
+    "commercial_scrap": {
+        "composition_mass_percent": {
+            "fe": 98.68,
+            "c": 0.18,
+            "si": 0.26,
+            "mn": 0.55,
+            "p": 0.05,
+            "s": 0.10,
+            "cao": 0.00,
+            "sio2": 0.00,
+            "al2o3": 0.00,
+            "mgo": 0.00,
+            "feo": 0.18
+        }
+    },
+
+    "heavy_melt_scrap_1": {
+        "composition_mass_percent": {
+            "fe": 98.20,
+            "c": 0.33,
+            "si": 0.28,
+            "mn": 1.00,
+            "p": 0.04,
+            "s": 0.05,
+            "cao": 0.00,
+            "sio2": 0.00,
+            "al2o3": 0.00,
+            "mgo": 0.00,
+            "feo": 0.10
+        }
+    },
+
+    "heavy_melt_scrap_2": {
+        "composition_mass_percent": {
+            "fe": 98.38,
+            "c": 0.28,
+            "si": 0.35,
+            "mn": 0.80,
+            "p": 0.04,
+            "s": 0.05,
+            "cao": 0.00,
+            "sio2": 0.00,
+            "al2o3": 0.00,
+            "mgo": 0.00,
+            "feo": 0.10
+        }
+    },
+
+    "pressed_bundles": {
+        "composition_mass_percent": {
+            "fe": 98.17,
+            "c": 0.28,
+            "si": 0.25,
+            "mn": 0.70,
+            "p": 0.06,
+            "s": 0.04,
+            "cao": 0.00,
+            "sio2": 0.70,
+            "al2o3": 0.00,
+            "mgo": 0.00,
+            "feo": 0.10
+        }
+    },
+
+    "sheared_scrap": {
+        "composition_mass_percent": {
+            "fe": 98.55,
+            "c": 0.20,
+            "si": 0.25,
+            "mn": 0.65,
+            "p": 0.05,
+            "s": 0.10,
+            "cao": 0.00,
+            "sio2": 0.00,
+            "al2o3": 0.00,
+            "mgo": 0.00,
+            "feo": 0.20
+        }
+    },
+
+    "steel_turnings": {
+        "composition_mass_percent": {
+            "fe": 97.71,
+            "c": 0.40,
+            "si": 0.20,
+            "mn": 1.10,
+            "p": 0.05,
+            "s": 0.04,
+            "cao": 0.00,
+            "sio2": 0.00,
+            "al2o3": 0.00,
+            "mgo": 0.00,
+            "feo": 0.10
+        }
+    },
+
+    "dri": {
+        "composition_mass_percent": {
+            "fe": 89.97,
+            "c": 3.20,
+            "si": 0.15,
+            "mn": 0.08,
+            "p": 0.04,
+            "s": 0.01,
+            "cao": 0.30,
+            "sio2": 1.00,
+            "al2o3": 0.35,
+            "mgo": 0.40,
+            "feo": 4.50
+        }
+    },
+
+    "hbi": {
+        "composition_mass_percent": {
+            "fe": 89.45,
+            "c": 2.10,
+            "si": 0.12,
+            "mn": 0.08,
+            "p": 0.04,
+            "s": 0.01,
+            "cao": 0.30,
+            "sio2": 1.50,
+            "al2o3": 0.40,
+            "mgo": 0.50,
+            "feo": 5.50
+        }
+    },
+
+    "cast_iron_scrap": {
+        "composition_mass_percent": {
+            "fe": 93.79,
+            "c": 3.46,
+            "si": 2.18,
+            "mn": 0.45,
+            "p": 0.07,
+            "s": 0.05,
+            "cao": 0.00,
+            "sio2": 0.00,
+            "al2o3": 0.00,
+            "mgo": 0.00,
+            "feo": 0.00
+        }
+    }
+}
