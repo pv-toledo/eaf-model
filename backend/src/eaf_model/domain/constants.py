@@ -1,5 +1,5 @@
-from typing import Final
 from types import MappingProxyType
+from typing import Final
 
 # ---------------------- ELEMENT, OXIDES AND GAS MASSES (g/mol) -------------------------------
 
@@ -13,27 +13,23 @@ _element_masses = {
     "p": 30.974,
     "s": 32.065,
     "cr": 51.996,
-    "ni": 58.693 
-} 
+    "ni": 58.693,
+}
 
 ELEMENT_MASSES: Final = MappingProxyType(_element_masses)
 
 _oxide_masses = {
-    "feo":  159.687,
+    "feo": 159.687,
     "sio2": 60.084,
     "mno": 70.937,
     "al2o3": 101.960,
     "cao": 56.077,
-    "mgo": 40.304
+    "mgo": 40.304,
 }
 
 OXIDE_MASSES: Final = MappingProxyType(_oxide_masses)
 
-_gas_masses = {
-    "co": 28.010,
-    "co2": 44.009,
-    "ch4": 16.042
-}
+_gas_masses = {"co": 28.010, "co2": 44.009, "ch4": 16.042}
 
 GAS_MASSES: Final = MappingProxyType(_gas_masses)
 
@@ -46,7 +42,7 @@ _enthalpies_of_formation = {
     "mno": -92.00,
     "p2o5": -356.60,
     "cr2o3": -270.00,
-    "feo": -63.20
+    "feo": -63.20,
 }
 
 ENTHALPIES_OF_FORMATION: Final = MappingProxyType(_enthalpies_of_formation)

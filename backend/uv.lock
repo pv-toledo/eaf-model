@@ -6,3 +6,8 @@ requires-python = ">=3.14"
 name = "eaf-model"
 version = "0.1.0"
 source = { editable = "." }
+
+[package.metadata]
+
+[package.metadata.requires-dev]
+dev = []
