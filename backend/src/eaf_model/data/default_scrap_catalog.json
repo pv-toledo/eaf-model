@@ -3,7 +3,7 @@
         "id": "pig_iron",
         "name": "Pig iron",
         "price": 430.0,
-        "yield": 95.5,
+        "metallic_yield_pct": 95.5,
         "composition_mass_percent": {
             "fe": 94.36,
             "c": 4.00,
@@ -23,7 +23,7 @@
         "id": "shredded",
         "name": "Shredded scrap",
         "price": 405.0,
-        "yield": 92.0,
+        "metallic_yield_pct": 92.0,
         "composition_mass_percent": {
             "fe": 98.57,
             "c": 0.28,
@@ -43,7 +43,7 @@
         "id": "recovered_scrap",
         "name": "Recovered scrap",
         "price": 355.0,
-        "yield": 89.5,
+        "metallic_yield_pct": 85.0,
         "composition_mass_percent": {
             "fe": 98.84,
             "c": 0.31,
@@ -63,7 +63,7 @@
         "id": "automotive_stamping_bundles",
         "name": "Automotive stamping bundles",
         "price": 435.0,
-        "yield": 93.5,
+        "metallic_yield_pct": 93.5,
         "composition_mass_percent": {
             "fe": 99.17,
             "c": 0.05,
@@ -83,7 +83,7 @@
         "id": "commercial_scrap",
         "name": "Commercial scrap",
         "price": 350.0,
-        "yield": 89.0,
+        "metallic_yield_pct": 89.0,
         "composition_mass_percent": {
             "fe": 98.68,
             "c": 0.18,
@@ -103,7 +103,7 @@
         "id": "heavy_melt_scrap_1",
         "name": "Heavy melt scrap 1",
         "price": 380.0,
-        "yield": 91.5,
+        "metallic_yield_pct": 91.5,
         "composition_mass_percent": {
             "fe": 98.20,
             "c": 0.33,
@@ -123,7 +123,7 @@
         "id": "heavy_melt_scrap_2",
         "name": "Heavy melt scrap 2",
         "price": 360.0,
-        "yield": 89.5,
+        "metallic_yield_pct": 89.5,
         "composition_mass_percent": {
             "fe": 98.38,
             "c": 0.28,
@@ -143,7 +143,7 @@
         "id": "pressed_bundles",
         "name": "Pressed bundles",
         "price": 345.0,
-        "yield": 87.5,
+        "metallic_yield_pct": 87.5,
         "composition_mass_percent": {
             "fe": 97.87,
             "c": 0.28,
@@ -163,7 +163,7 @@
         "id": "sheared_scrap",
         "name": "Sheared scrap",
         "price": 375.0,
-        "yield": 90.5,
+        "metallic_yield_pct": 90.5,
         "composition_mass_percent": {
             "fe": 98.55,
             "c": 0.20,
@@ -183,7 +183,7 @@
         "id": "steel_turnings",
         "name": "Steel turnings",
         "price": 275.0,
-        "yield": 83.5,
+        "metallic_yield_pct": 83.5,
         "composition_mass_percent": {
             "fe": 98.11,
             "c": 0.40,
@@ -203,7 +203,7 @@
         "id": "dri",
         "name": "DRI",
         "price": 325.0,
-        "yield": 90.0,
+        "metallic_yield_pct": 90.0,
         "composition_mass_percent": {
             "fe": 85.65,
             "c": 2.50,
@@ -223,7 +223,7 @@
         "id": "hbi",
         "name": "HBI",
         "price": 355.0,
-        "yield": 90.5,
+        "metallic_yield_pct": 90.5,
         "composition_mass_percent": {
             "fe": 87.35,
             "c": 1.20,
@@ -243,7 +243,7 @@
         "id": "cast_iron_scrap",
         "name": "Cast iron scrap",
         "price": 400.0,
-        "yield": 90.0,
+        "metallic_yield_pct": 90.0,
         "composition_mass_percent": {
             "fe": 93.79,
             "c": 3.46,
