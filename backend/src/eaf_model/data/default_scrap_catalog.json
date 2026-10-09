@@ -1,5 +1,7 @@
-{
-    "pig_iron": {
+[
+    {
+        "id": "pig_iron",
+        "name": "Pig iron",
         "price": 430.0,
         "yield": 95.5,
         "composition_mass_percent": {
@@ -17,7 +19,9 @@
         }
     },
 
-    "shredded": {
+    {
+        "id": "shredded",
+        "name": "Shredded scrap",
         "price": 405.0,
         "yield": 92.0,
         "composition_mass_percent": {
@@ -35,7 +39,9 @@
         }
     },
 
-    "recovered_scrap": {
+    {
+        "id": "recovered_scrap",
+        "name": "Recovered scrap",
         "price": 355.0,
         "yield": 89.5,
         "composition_mass_percent": {
@@ -53,11 +59,13 @@
         }
     },
 
-    "automotive_stamping_bundles": {
+    {
+        "id": "automotive_stamping_bundles",
+        "name": "Automotive stamping bundles",
         "price": 435.0,
         "yield": 93.5,
         "composition_mass_percent": {
-            "fe": 99.09,
+            "fe": 99.17,
             "c": 0.05,
             "si": 0.22,
             "mn": 0.43,
@@ -71,7 +79,9 @@
         }
     },
 
-    "commercial_scrap": {
+    {
+        "id": "commercial_scrap",
+        "name": "Commercial scrap",
         "price": 350.0,
         "yield": 89.0,
         "composition_mass_percent": {
@@ -89,7 +99,9 @@
         }
     },
 
-    "heavy_melt_scrap_1": {
+    {
+        "id": "heavy_melt_scrap_1",
+        "name": "Heavy melt scrap 1",
         "price": 380.0,
         "yield": 91.5,
         "composition_mass_percent": {
@@ -107,7 +119,9 @@
         }
     },
 
-    "heavy_melt_scrap_2": {
+    {
+        "id": "heavy_melt_scrap_2",
+        "name": "Heavy melt scrap 2",
         "price": 360.0,
         "yield": 89.5,
         "composition_mass_percent": {
@@ -125,11 +139,13 @@
         }
     },
 
-    "pressed_bundles": {
+    {
+        "id": "pressed_bundles",
+        "name": "Pressed bundles",
         "price": 345.0,
         "yield": 87.5,
         "composition_mass_percent": {
-            "fe": 98.17,
+            "fe": 97.87,
             "c": 0.28,
             "si": 0.25,
             "mn": 0.70,
@@ -143,7 +159,9 @@
         }
     },
 
-    "sheared_scrap": {
+    {
+        "id": "sheared_scrap",
+        "name": "Sheared scrap",
         "price": 375.0,
         "yield": 90.5,
         "composition_mass_percent": {
@@ -161,11 +179,13 @@
         }
     },
 
-    "steel_turnings": {
+    {
+        "id": "steel_turnings",
+        "name": "Steel turnings",
         "price": 275.0,
         "yield": 83.5,
         "composition_mass_percent": {
-            "fe": 97.71,
+            "fe": 98.11,
             "c": 0.40,
             "si": 0.20,
             "mn": 1.10,
@@ -179,43 +199,49 @@
         }
     },
 
-    "dri": {
+    {
+        "id": "dri",
+        "name": "DRI",
         "price": 325.0,
         "yield": 90.0,
         "composition_mass_percent": {
-            "fe": 89.97,
-            "c": 3.20,
-            "si": 0.15,
+            "fe": 85.65,
+            "c": 2.50,
+            "si": 0.02,
             "mn": 0.08,
             "p": 0.04,
             "s": 0.01,
-            "cao": 0.30,
-            "sio2": 1.00,
-            "al2o3": 0.35,
-            "mgo": 0.40,
-            "feo": 4.50
+            "cao": 0.70,
+            "sio2": 2.90,
+            "al2o3": 0.70,
+            "mgo": 0.50,
+            "feo": 6.90
         }
     },
 
-    "hbi": {
+    {
+        "id": "hbi",
+        "name": "HBI",
         "price": 355.0,
         "yield": 90.5,
         "composition_mass_percent": {
-            "fe": 89.45,
-            "c": 2.10,
-            "si": 0.12,
+            "fe": 87.35,
+            "c": 1.20,
+            "si": 0.02,
             "mn": 0.08,
             "p": 0.04,
             "s": 0.01,
-            "cao": 0.30,
-            "sio2": 1.50,
-            "al2o3": 0.40,
+            "cao": 0.70,
+            "sio2": 2.40,
+            "al2o3": 0.70,
             "mgo": 0.50,
-            "feo": 5.50
+            "feo": 7.00
         }
     },
 
-    "cast_iron_scrap": {
+    {
+        "id": "cast_iron_scrap",
+        "name": "Cast iron scrap",
         "price": 400.0,
         "yield": 90.0,
         "composition_mass_percent": {
@@ -232,4 +258,4 @@
             "feo": 0.00
         }
     }
-}
+]
