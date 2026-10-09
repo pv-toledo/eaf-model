@@ -1,0 +1,10 @@
+{
+    "eaf_temperature_celsius": 1600,
+    "loading_basket_capacity_tons": 120,
+    "electrode_consumption_kg_per_ton": 2.0,
+    "dust_loss_kg_per_ton": 17.0,
+    "feo_slag_mass_percent": 25.0,
+    "ch4_usage_nm3_per_ton": 5.0,
+    "post_combustion_percentage": 20.0,
+    "energy_loss_percent": 20.0 
+}

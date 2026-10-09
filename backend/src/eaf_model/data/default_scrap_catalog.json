@@ -1,5 +1,7 @@
 {
     "pig_iron": {
+        "price": 430.0,
+        "yield": 95.5,
         "composition_mass_percent": {
             "fe": 94.36,
             "c": 4.00,
@@ -16,6 +18,8 @@
     },
 
     "shredded": {
+        "price": 405.0,
+        "yield": 92.0,
         "composition_mass_percent": {
             "fe": 98.57,
             "c": 0.28,
@@ -32,6 +36,8 @@
     },
 
     "recovered_scrap": {
+        "price": 355.0,
+        "yield": 89.5,
         "composition_mass_percent": {
             "fe": 98.84,
             "c": 0.31,
@@ -48,6 +54,8 @@
     },
 
     "automotive_stamping_bundles": {
+        "price": 435.0,
+        "yield": 93.5,
         "composition_mass_percent": {
             "fe": 99.09,
             "c": 0.05,
@@ -64,6 +72,8 @@
     },
 
     "commercial_scrap": {
+        "price": 350.0,
+        "yield": 89.0,
         "composition_mass_percent": {
             "fe": 98.68,
             "c": 0.18,
@@ -80,6 +90,8 @@
     },
 
     "heavy_melt_scrap_1": {
+        "price": 380.0,
+        "yield": 91.5,
         "composition_mass_percent": {
             "fe": 98.20,
             "c": 0.33,
@@ -96,6 +108,8 @@
     },
 
     "heavy_melt_scrap_2": {
+        "price": 360.0,
+        "yield": 89.5,
         "composition_mass_percent": {
             "fe": 98.38,
             "c": 0.28,
@@ -112,6 +126,8 @@
     },
 
     "pressed_bundles": {
+        "price": 345.0,
+        "yield": 87.5,
         "composition_mass_percent": {
             "fe": 98.17,
             "c": 0.28,
@@ -128,6 +144,8 @@
     },
 
     "sheared_scrap": {
+        "price": 375.0,
+        "yield": 90.5,
         "composition_mass_percent": {
             "fe": 98.55,
             "c": 0.20,
@@ -144,6 +162,8 @@
     },
 
     "steel_turnings": {
+        "price": 275.0,
+        "yield": 83.5,
         "composition_mass_percent": {
             "fe": 97.71,
             "c": 0.40,
@@ -160,6 +180,8 @@
     },
 
     "dri": {
+        "price": 325.0,
+        "yield": 90.0,
         "composition_mass_percent": {
             "fe": 89.97,
             "c": 3.20,
@@ -176,6 +198,8 @@
     },
 
     "hbi": {
+        "price": 355.0,
+        "yield": 90.5,
         "composition_mass_percent": {
             "fe": 89.45,
             "c": 2.10,
@@ -192,6 +216,8 @@
     },
 
     "cast_iron_scrap": {
+        "price": 400.0,
+        "yield": 90.0,
         "composition_mass_percent": {
             "fe": 93.79,
             "c": 3.46,
