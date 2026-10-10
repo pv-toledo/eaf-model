@@ -1,0 +1,10 @@
+{
+    "basket_capacity_t": 120.0,
+    "scrap_limits": [
+        {
+            "material_id": "pig_iron",
+            "min_pct": 0.0,
+            "max_pct": 20.0
+        }
+    ]
+}
