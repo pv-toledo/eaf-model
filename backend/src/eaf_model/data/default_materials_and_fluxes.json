@@ -2,8 +2,8 @@
     {
         "id": "calcitic_quicklime",
         "name": "Calcitic quicklime",
-        "price": 150.0,
-        "composition_mass_percent": {
+        "price_usd_per_t": 150.0,
+        "composition_pct": {
             "s": 0.03,
             "cao": 94.00,
             "sio2": 1.00,
@@ -15,8 +15,8 @@
     {
         "id": "dolomitic_quicklime",
         "name": "Dolomitic quicklime",
-        "price": 155.0,
-        "composition_mass_percent": {
+        "price_usd_per_t": 155.0,
+        "composition_pct": {
             "s": 0.03,
             "cao": 55.00,
             "sio2": 1.50,
@@ -28,8 +28,8 @@
     {
         "id": "sic",
         "name": "SiC",
-        "price": 750.0,
-        "composition_mass_percent": {
+        "price_usd_per_t": 750.0,
+        "composition_pct": {
             "c": 27.00,
             "si": 63.00,
             "sio2": 1.50,
@@ -41,8 +41,8 @@
     {
         "id": "fesi75",
         "name": "FeSi 75",
-        "price": 1200.0,
-        "composition_mass_percent": {
+        "price_usd_per_t": 1200.0,
+        "composition_pct": {
             "fe": 24.69,
             "c": 0.13,
             "si": 75.00,
@@ -54,8 +54,8 @@
     {
         "id": "fesimn",
         "name": "FeSiMn",
-        "price": 1000.0,
-        "composition_mass_percent": {
+        "price_usd_per_t": 1000.0,
+        "composition_pct": {
             "fe": 15.05,
             "c": 1.80,
             "si": 18.00,
