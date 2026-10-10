@@ -1,0 +1,37 @@
+[
+    {
+        "id": "low_carbon",
+        "name": "Low carbon",
+        "element_limits": [
+            { "element": "c",  "min_pct": 0.030, "max_pct": 0.080 },
+            { "element": "si", "min_pct": null,  "max_pct": 0.030 },
+            { "element": "mn", "min_pct": 0.050, "max_pct": 0.150 },
+            { "element": "p",  "min_pct": null,  "max_pct": 0.015 },
+            { "element": "s",  "min_pct": null,  "max_pct": 0.040 }
+        ]
+    },
+
+    {
+        "id": "structural",
+        "name": "Structural",
+        "element_limits": [
+            { "element": "c",  "min_pct": 0.100, "max_pct": 0.200 },
+            { "element": "si", "min_pct": null,  "max_pct": 0.030 },
+            { "element": "mn", "min_pct": 0.150, "max_pct": 0.350 },
+            { "element": "p",  "min_pct": null,  "max_pct": 0.030 },
+            { "element": "s",  "min_pct": null,  "max_pct": 0.040 }
+        ]
+    },
+
+    {
+        "id": "high_carbon",
+        "name": "High carbon",
+        "element_limits": [
+            { "element": "c",  "min_pct": 0.300, "max_pct": 0.600 },
+            { "element": "si", "min_pct": null,  "max_pct": 0.030 },
+            { "element": "mn", "min_pct": 0.200, "max_pct": 0.400 },
+            { "element": "p",  "min_pct": null,  "max_pct": 0.015 },
+            { "element": "s",  "min_pct": null,  "max_pct": 0.030 }
+        ]
+    }
+]
