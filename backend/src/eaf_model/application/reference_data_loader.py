@@ -1,6 +1,7 @@
 import json
 
 from eaf_model.domain.materials import Material, Scrap
+from eaf_model.domain.steel_grades import ElementLimit, Steel
 
 
 def load_default_materials(path: str) -> list[Material]:
@@ -32,3 +33,22 @@ def load_default_scraps(path: str) -> list[Scrap]:
         )
         for item in raw_data
     ]
+
+
+def load_default_steel_grades(path: str) -> list[Steel]:
+    with open(path) as file:
+        raw_data = json.load(file)
+
+        return [
+            Steel(
+                id=item["id"],
+                name=item["name"],
+                element_limits=[
+                    ElementLimit(
+                        element=limit["element"], max_pct=limit["max_pct"], min_pct=limit["min_pct"]
+                    )
+                    for limit in item["element_limits"]
+                ],
+            )
+            for item in raw_data
+        ]
