@@ -2,6 +2,7 @@ import json
 
 from eaf_model.domain.constraints import ChargeConstraint, ScrapLimit
 from eaf_model.domain.materials import Material, Scrap
+from eaf_model.domain.process import ProcessParameters
 from eaf_model.domain.steel_grades import ElementLimit, Steel
 
 
@@ -70,5 +71,22 @@ def load_default_charge_constraints(path: str) -> list[ChargeConstraint]:
                     )
                     for limit in raw_data["scrap_limits"]
                 ],
+            )
+        ]
+
+
+def load_default_process_parameters(path: str) -> list[ProcessParameters]:
+    with open(path) as file:
+        raw_data = json.load(file)
+
+        return [
+            ProcessParameters(
+                tap_temperature_c=raw_data["tap_temperature_c"],
+                electric_energy_loss_pct=raw_data["electrode_kg_per_t_liquid"],
+                dust_loss_kg_per_t_charge=raw_data["dust_loss_kg_per_t_charge"],
+                slag_feo_pct=raw_data["slag_feo_pct"],
+                ch4_nm3_per_t_charge=raw_data["ch4_nm3_per_t_charge"],
+                post_combustion_pct=raw_data["post_combustion_pct"],
+                electrode_kg_per_t_liquid=raw_data["electric_energy_loss_pct"],
             )
         ]

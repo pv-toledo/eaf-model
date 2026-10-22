@@ -1,6 +1,7 @@
 from eaf_model.application.reference_data_loader import (
     load_default_charge_constraints,
     load_default_materials,
+    load_default_process_parameters,
     load_default_scraps,
     load_default_steel_grades,
 )
@@ -26,3 +27,10 @@ def test_load_default_charge_constraints() -> None:
         "src/eaf_model/data/default_charge_constraints.json"
     )
     assert len(charge_constraints) == 1
+
+
+def test_load_default_process_parameters() -> None:
+    process_parameters = load_default_process_parameters(
+        "src/eaf_model/data/default_process_parameters.json"
+    )
+    assert len(process_parameters) == 1
