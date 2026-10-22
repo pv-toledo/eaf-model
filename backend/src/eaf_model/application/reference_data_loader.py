@@ -1,5 +1,6 @@
 import json
 
+from eaf_model.domain.constraints import ChargeConstraint, ScrapLimit
 from eaf_model.domain.materials import Material, Scrap
 from eaf_model.domain.steel_grades import ElementLimit, Steel
 
@@ -51,4 +52,23 @@ def load_default_steel_grades(path: str) -> list[Steel]:
                 ],
             )
             for item in raw_data
+        ]
+
+
+def load_default_charge_constraints(path: str) -> list[ChargeConstraint]:
+    with open(path) as file:
+        raw_data = json.load(file)
+
+        return [
+            ChargeConstraint(
+                basket_capacity_t=raw_data["basket_capacity_t"],
+                scrap_limits=[
+                    ScrapLimit(
+                        material_id=limit["material_id"],
+                        min_pct=limit["min_pct"],
+                        max_pct=limit["max_pct"],
+                    )
+                    for limit in raw_data["scrap_limits"]
+                ],
+            )
         ]
