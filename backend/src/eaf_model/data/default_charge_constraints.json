@@ -5,6 +5,16 @@
             "material_id": "pig_iron",
             "min_pct": 0.0,
             "max_pct": 20.0
+        },
+        {
+            "material_id": "commercial_scrap",
+            "min_pct": 5.0,
+            "max_pct": 100.0
+        },
+        {
+            "material_id": "commercial_scrap",
+            "min_pct": 5.0,
+            "max_pct": 100.0
         }
     ]
 }
