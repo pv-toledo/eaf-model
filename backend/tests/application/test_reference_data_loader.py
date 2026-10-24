@@ -1,11 +1,8 @@
-from eaf_model.application.reference_data_loader import (
-    load_default_charge_constraints,
-    load_default_materials,
-    load_default_process_parameters,
-    load_default_scenario,
-    load_default_scraps,
-    load_default_steel_grades,
-)
+from eaf_model.domain.constraints import load_default_charge_constraints
+from eaf_model.domain.materials import load_default_materials, load_default_scraps
+from eaf_model.domain.process import load_default_process_parameters
+from eaf_model.domain.scenario import load_default_scenario
+from eaf_model.domain.steel_grades import load_default_steel_grades
 
 
 def test_load_default_materials() -> None:
