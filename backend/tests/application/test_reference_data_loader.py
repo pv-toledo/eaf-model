@@ -4,6 +4,7 @@ from eaf_model.application.reference_data_loader import (
     load_default_process_parameters,
     load_default_scraps,
     load_default_steel_grades,
+    load_default_scenario
 )
 
 
@@ -34,3 +35,9 @@ def test_load_default_process_parameters() -> None:
         "src/eaf_model/data/default_process_parameters.json"
     )
     assert len(process_parameters) == 1
+
+def test_load_default_scenario() -> None:
+    scenario = load_default_scenario(
+        "src/eaf_model/data/default_charged_scraps.json"
+    )
+    assert len(scenario) == 7 

@@ -4,6 +4,7 @@ from eaf_model.domain.constraints import ChargeConstraint, ScrapLimit
 from eaf_model.domain.materials import Material, Scrap
 from eaf_model.domain.process import ProcessParameters
 from eaf_model.domain.steel_grades import ElementLimit, Steel
+from eaf_model.domain.scenario import ChargedScrap
 
 
 def load_default_materials(path: str) -> list[Material]:
@@ -89,4 +90,16 @@ def load_default_process_parameters(path: str) -> list[ProcessParameters]:
                 post_combustion_pct=raw_data["post_combustion_pct"],
                 electrode_kg_per_t_liquid=raw_data["electric_energy_loss_pct"],
             )
+        ]
+
+def load_default_scenario(path: str) -> list[ChargedScrap]:
+    with open(path) as file:
+        raw_data = json.load(file)
+
+        return [
+            ChargedScrap(
+                scrap_id=item["scrap_id"],
+                amount_charged_t=item["amount_charged_t"]
+            )
+            for item in raw_data
         ]

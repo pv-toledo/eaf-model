@@ -1,0 +1,9 @@
+[
+  { "amount_charged_t": 25.0, "scrap_id": "shredded" },
+  { "amount_charged_t": 20.0, "scrap_id": "heavy_melt_scrap_1" },
+  { "amount_charged_t": 15.0, "scrap_id": "pig_iron" },
+  { "amount_charged_t": 15.0, "scrap_id": "automotive_stamping_bundles" },
+  { "amount_charged_t": 10.0, "scrap_id": "heavy_melt_scrap_2" },
+  { "amount_charged_t": 10.0, "scrap_id": "hbi" },
+  { "amount_charged_t": 5.0, "scrap_id": "commercial_scrap" }
+]
