@@ -4,10 +4,12 @@ elements_in_steel = ["fe", "c", "si", "mn", "p", "s"]
 oxides_in_slag = ["cao", "sio2", "al2o3", "mgo", "feo"]
 
 
-def load_default_metallic_mix() -> dict[str, float]:
+def load_default_metallic_mix(
+    charged_scraps_path: str, charged_constraints_path: str
+) -> dict[str, float]:
     with (
-        open("../data/default_charged_scraps.json") as charged_scraps,
-        open("../data/default_charge_constraints.json") as charge_constraints,
+        open(charged_scraps_path) as charged_scraps,
+        open(charged_constraints_path) as charge_constraints,
     ):
         charged_scraps = json.load(charged_scraps)
         charge_constraints = json.load(charge_constraints)
@@ -20,8 +22,8 @@ def load_default_metallic_mix() -> dict[str, float]:
         return metallic_mix
 
 
-def calculate_charged_elements_and_oxides(metallic_mix: dict[str, float]):
-    with open("../data/default_scrap_catalog.json") as file:
+def calculate_charged_elements_and_oxides(scrap_catalog_path: str, metallic_mix: dict[str, float]):
+    with open(scrap_catalog_path) as file:
         scrap_catalog = json.load(file)
 
         elements = dict.fromkeys(elements_in_steel, 0.0)
@@ -46,9 +48,3 @@ def calculate_charged_elements_and_oxides(metallic_mix: dict[str, float]):
         "elements": {element: round(value, 2) for element, value in elements.items()},
         "oxides": {oxide: round(value, 2) for oxide, value in oxides.items()},
     }
-
-
-metallic_mix = load_default_metallic_mix()
-charge = calculate_charged_elements_and_oxides(metallic_mix)
-
-print(charge)
