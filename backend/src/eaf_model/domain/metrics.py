@@ -1,7 +1,14 @@
 import json
+from dataclasses import dataclass
 
 elements_in_steel = ["fe", "c", "si", "mn", "p", "s"]
 oxides_in_slag = ["cao", "sio2", "al2o3", "mgo", "feo"]
+
+
+@dataclass(frozen=True)
+class ChargedElements:
+    elements: dict[str, float]
+    oxides: dict[str, float]
 
 
 def load_default_metallic_mix(
@@ -22,7 +29,9 @@ def load_default_metallic_mix(
         return metallic_mix
 
 
-def calculate_charged_elements_and_oxides(scrap_catalog_path: str, metallic_mix: dict[str, float]):
+def calculate_charged_elements_and_oxides(
+    scrap_catalog_path: str, metallic_mix: dict[str, float]
+) -> ChargedElements:
     with open(scrap_catalog_path) as file:
         scrap_catalog = json.load(file)
 
