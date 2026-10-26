@@ -1,4 +1,5 @@
 from dataclasses import dataclass
+from typing import TypedDict
 
 from eaf_model.domain.materials import Scrap
 
@@ -7,7 +8,7 @@ oxides_in_slag = ["cao", "sio2", "al2o3", "mgo", "feo"]
 
 
 @dataclass(frozen=True)
-class ChargedElements:
+class ChargedElements(TypedDict):
     elements: dict[str, float]
     oxides: dict[str, float]
 
