@@ -7,7 +7,25 @@ from eaf_model.domain.scenario import ChargedScrap
 from eaf_model.domain.steel_grades import ElementLimit, Steel
 
 
-def load_default_scraps(path: str) -> list[Scrap]:
+def load_default_metallic_mix(
+    charged_scraps_path: str, charged_constraints_path: str
+) -> dict[str, float]:
+    with (
+        open(charged_scraps_path) as charged_scraps,
+        open(charged_constraints_path) as charge_constraints,
+    ):
+        charged_scraps = json.load(charged_scraps)
+        charge_constraints = json.load(charge_constraints)
+
+        basket_capacity_t = charge_constraints["basket_capacity_t"]
+        metallic_mix = {}
+
+        for item in charged_scraps:
+            metallic_mix[item["scrap_id"]] = item["amount_charged_t"] * basket_capacity_t / 100
+        return metallic_mix
+
+
+def load_default_scrap_catalog(path: str) -> list[Scrap]:
     with open(path) as file:
         raw_data = json.load(file)
 
