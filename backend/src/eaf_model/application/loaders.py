@@ -119,3 +119,9 @@ def load_default_steel_grades(path: str) -> list[Steel]:
             )
             for item in raw_data
         ]
+
+
+def load_selected_steel_grade(
+    default_steel_grades: list[Steel], steel_id: str = "low_carbon"
+) -> Steel:
+    return next(steel for steel in default_steel_grades if steel.id == steel_id)

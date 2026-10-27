@@ -4,8 +4,12 @@ from eaf_model.application.loaders import (
     load_default_metallic_mix,
     load_default_scrap_catalog,
     load_default_steel_grades,
+    load_selected_steel_grade,
 )
-from eaf_model.domain.metrics import calculate_charged_elements_and_oxides
+from eaf_model.domain.eaf_charge import (
+    calculate_charged_elements_and_oxides,
+    calculte_refining_masses,
+)
 
 BACKEND_DIR = Path(__file__).resolve().parents[1]
 DATA_DIR = BACKEND_DIR / "src" / "eaf_model" / "data"
@@ -24,11 +28,11 @@ def main() -> None:
 
     steel_grades = load_default_steel_grades(str(DATA_DIR / "default_steel_grades.json"))
 
-    low_carbon = next(s for s in steel_grades if s.id == "low_carbon")
+    low_carbon_steel = load_selected_steel_grade(steel_grades)
 
-    total = sum(eaf_input["elements"].values())
+    refining_masses = calculte_refining_masses(eaf_input, low_carbon_steel)
 
-    print(total, low_carbon)
+    print(refining_masses)
 
 
 if __name__ == "__main__":
