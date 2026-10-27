@@ -27,12 +27,17 @@ def calculate_charged_elements_and_oxides(
             continue
 
         composition_pct = scrap.composition_pct
+        metallic_yield = scrap.metallic_yield_pct
 
         for element in elements:
-            elements[element] += charged_amount_t * composition_pct[element] / 100
+            elements[element] += (
+                charged_amount_t * composition_pct[element] * (metallic_yield / 100) / 100
+            )
 
         for oxide in oxides:
-            oxides[oxide] += charged_amount_t * composition_pct[oxide] / 100
+            oxides[oxide] += (
+                charged_amount_t * composition_pct[oxide] * (metallic_yield / 100) / 100
+            )
 
     return {
         "elements": {element: round(value, 2) for element, value in elements.items()},

@@ -24,7 +24,11 @@ def main() -> None:
 
     steel_grades = load_default_steel_grades(str(DATA_DIR / "default_steel_grades.json"))
 
-    print(eaf_input, steel_grades)
+    low_carbon = next(s for s in steel_grades if s.id == "low_carbon")
+
+    total = sum(eaf_input["elements"].values())
+
+    print(total, low_carbon)
 
 
 if __name__ == "__main__":
