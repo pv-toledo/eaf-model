@@ -1,5 +1,5 @@
 from eaf_model.application.loaders import load_default_metallic_mix, load_default_scrap_catalog
-from eaf_model.domain.metrics import calculate_charged_elements_and_oxides
+from eaf_model.domain.eaf_charge import calculate_charged_elements_and_oxides
 
 
 def test_metrics() -> None:
