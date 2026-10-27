@@ -8,7 +8,7 @@ from eaf_model.application.loaders import (
 )
 from eaf_model.domain.eaf_charge import (
     calculate_charged_elements_and_oxides,
-    calculte_refining_masses,
+    calculate_refining_masses,
 )
 
 BACKEND_DIR = Path(__file__).resolve().parents[1]
@@ -30,7 +30,7 @@ def main() -> None:
 
     low_carbon_steel = load_selected_steel_grade(steel_grades)
 
-    refining_masses = calculte_refining_masses(eaf_input, low_carbon_steel)
+    refining_masses = calculate_refining_masses(eaf_input, low_carbon_steel)
 
     print(refining_masses)
 

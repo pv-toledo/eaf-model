@@ -28,16 +28,26 @@ def calculate_charged_elements_and_oxides(
         metallic_yield = scrap.metallic_yield_pct
 
         if metallic_yield is None:
-            raise ValueError(f"Metallic yield not informed '{scrap.id}'.")
+            raise ValueError(f"Metallic yield not informed for scrap '{scrap.id}'.")
 
         composition_pct = scrap.composition_pct
         yield_fraction = metallic_yield / 100
 
         for element in elements:
-            elements[element] += charged_amount_t * composition_pct[element] * yield_fraction / 100
+            element_pct = composition_pct[element]
+
+            if element_pct is None:
+                raise ValueError(f"Element '{element}' not informed for scrap '{scrap.id}'.")
+
+            elements[element] += charged_amount_t * element_pct * yield_fraction / 100
 
         for oxide in oxides:
-            oxides[oxide] += charged_amount_t * composition_pct[oxide] * yield_fraction / 100
+            oxide_pct = composition_pct[oxide]
+
+            if oxide_pct is None:
+                raise ValueError(f"Oxide '{oxide}' not informed for scrap '{scrap.id}'.")
+
+            oxides[oxide] += charged_amount_t * oxide_pct * yield_fraction / 100
 
     return {
         "elements": {element: round(value, 2) for element, value in elements.items()},
