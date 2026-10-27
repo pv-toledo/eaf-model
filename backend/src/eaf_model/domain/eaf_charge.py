@@ -62,9 +62,19 @@ def calculate_refining_masses(
     input_element_masses = eaf_input_masses["elements"]
     total_input_mass = sum(input_element_masses.values())
 
-    target_eaf_masses = {
-        element_limit.element: (element_limit.max_pct * total_input_mass / 100)
-        for element_limit in steel_grade.element_limits
-    }
+    target_eaf_masses: dict[str, float] = {}
 
-    return {key: input_element_masses[key] - target_eaf_masses[key] for key in target_eaf_masses}
+    for element_limit in steel_grade.element_limits:
+        max_pct = element_limit.max_pct
+
+        if max_pct is None:
+            raise ValueError(
+                f"Maximum percentage not informed for element '{element_limit.element}'."
+            )
+
+        target_eaf_masses[element_limit.element] = max_pct * total_input_mass / 100
+
+    return {
+        key: input_element_masses[key] - target_mass
+        for key, target_mass in target_eaf_masses.items()
+    }
