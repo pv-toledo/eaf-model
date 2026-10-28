@@ -2,6 +2,7 @@ from pathlib import Path
 
 from eaf_model.application.loaders import (
     load_default_metallic_mix,
+    load_default_process_parameters,
     load_default_scrap_catalog,
     load_default_steel_grades,
     load_selected_steel_grade,
@@ -30,11 +31,11 @@ def main() -> None:
 
     low_carbon_steel = load_selected_steel_grade(steel_grades)
 
-    refining_masses = calculate_refining_masses(eaf_input, low_carbon_steel)
+    process_parameters = load_default_process_parameters(
+        str(DATA_DIR / "default_process_parameters.json")
+    )
 
-    # process_parameters = load_default_process_parameters(
-    #     str(DATA_DIR / "default_process_parameters.json")
-    # )
+    refining_masses = calculate_refining_masses(eaf_input, low_carbon_steel, process_parameters)
 
     # teste = calculate_silicon_mass_balance(refining_masses)
 

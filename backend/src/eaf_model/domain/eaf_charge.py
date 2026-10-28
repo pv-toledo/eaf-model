@@ -2,6 +2,7 @@ from dataclasses import dataclass
 from typing import TypedDict
 
 from eaf_model.domain.materials import Scrap
+from eaf_model.domain.process import ProcessParameters
 from eaf_model.domain.steel_grades import Steel
 
 elements_in_steel = ["fe", "c", "si", "mn", "p", "s"]
@@ -66,11 +67,18 @@ def calculate_charged_elements_and_oxides(
 
 
 def calculate_refining_masses(
-    eaf_input_masses: ChargedElements,
-    steel_grade: Steel,
+    eaf_input_masses: ChargedElements, steel_grade: Steel, process_parameters: ProcessParameters
 ) -> RefiningMasses:
-    input_element_masses = eaf_input_masses["elements"]
+    input_element_masses = eaf_input_masses["elements"].copy()
     total_input_mass = sum(input_element_masses.values())
+
+    electrode_carbon_pick_up_t = (
+        total_input_mass * process_parameters.electrode_kg_per_t_liquid
+    ) / 1000
+
+    input_element_masses["c"] += electrode_carbon_pick_up_t
+
+    total_input_mass += electrode_carbon_pick_up_t
 
     target_eaf_masses: dict[str, float] = {}
 
