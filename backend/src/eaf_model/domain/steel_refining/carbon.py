@@ -9,8 +9,8 @@ from eaf_model.domain.process import ProcessParameters
 class CarbonMassBalance:
     co_mass_kg: float
     co2_mass_kg: float
-    oxygen_for_co_generation_kg: float
-    oxygen_for_co2_generation_kg: float
+    oxygen_for_co_formation_kg: float
+    oxygen_for_co2_formation_kg: float
     total_oxygen_for_carbon_adjustment: float
 
 
@@ -46,7 +46,7 @@ def calculate_carbon_mass_balance(
     return CarbonMassBalance(
         co_mass_kg=co_mass_kg * (1 - process_parameters.post_combustion_pct / 100),
         co2_mass_kg=co2_mass_kg,
-        oxygen_for_co_generation_kg=oxygen_mass_for_co_formation_kg,
-        oxygen_for_co2_generation_kg=oxygen_mass_for_co2_formation_kg,
+        oxygen_for_co_formation_kg=oxygen_mass_for_co_formation_kg,
+        oxygen_for_co2_formation_kg=oxygen_mass_for_co2_formation_kg,
         total_oxygen_for_carbon_adjustment=total_oxygen_for_carbon_adjustment,
     )
