@@ -1,3 +1,4 @@
+from dataclasses import dataclass
 from typing import TypedDict
 
 from eaf_model.domain.materials import Scrap
@@ -10,6 +11,15 @@ oxides_in_slag = ["cao", "sio2", "al2o3", "mgo", "feo"]
 class ChargedElements(TypedDict):
     elements: dict[str, float]
     oxides: dict[str, float]
+
+
+@dataclass(frozen=True)
+class RefiningMasses:
+    c: float
+    si: float
+    mn: float
+    p: float
+    s: float
 
 
 def calculate_charged_elements_and_oxides(
@@ -58,7 +68,7 @@ def calculate_charged_elements_and_oxides(
 def calculate_refining_masses(
     eaf_input_masses: ChargedElements,
     steel_grade: Steel,
-) -> dict[str, float]:
+) -> RefiningMasses:
     input_element_masses = eaf_input_masses["elements"]
     total_input_mass = sum(input_element_masses.values())
 
@@ -74,7 +84,9 @@ def calculate_refining_masses(
 
         target_eaf_masses[element_limit.element] = max_pct * total_input_mass / 100
 
-    return {
-        key: input_element_masses[key] - target_mass
-        for key, target_mass in target_eaf_masses.items()
-    }
+    return RefiningMasses(
+        **{
+            key: input_element_masses[key] - target_mass
+            for key, target_mass in target_eaf_masses.items()
+        }
+    )

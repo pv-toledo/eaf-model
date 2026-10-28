@@ -75,21 +75,19 @@ def load_default_materials(path: str) -> list[Material]:
     ]
 
 
-def load_default_process_parameters(path: str) -> list[ProcessParameters]:
+def load_default_process_parameters(path: str) -> ProcessParameters:
     with open(path) as file:
         raw_data = json.load(file)
 
-        return [
-            ProcessParameters(
-                tap_temperature_c=raw_data["tap_temperature_c"],
-                electric_energy_loss_pct=raw_data["electrode_kg_per_t_liquid"],
-                dust_loss_kg_per_t_charge=raw_data["dust_loss_kg_per_t_charge"],
-                slag_feo_pct=raw_data["slag_feo_pct"],
-                ch4_nm3_per_t_charge=raw_data["ch4_nm3_per_t_charge"],
-                post_combustion_pct=raw_data["post_combustion_pct"],
-                electrode_kg_per_t_liquid=raw_data["electric_energy_loss_pct"],
-            )
-        ]
+        return ProcessParameters(
+            tap_temperature_c=raw_data["tap_temperature_c"],
+            electric_energy_loss_pct=raw_data["electrode_kg_per_t_liquid"],
+            dust_loss_kg_per_t_charge=raw_data["dust_loss_kg_per_t_charge"],
+            slag_feo_pct=raw_data["slag_feo_pct"],
+            ch4_nm3_per_t_charge=raw_data["ch4_nm3_per_t_charge"],
+            post_combustion_pct=raw_data["post_combustion_pct"],
+            electrode_kg_per_t_liquid=raw_data["electric_energy_loss_pct"],
+        )
 
 
 def load_default_scenario(path: str) -> list[ChargedScrap]:

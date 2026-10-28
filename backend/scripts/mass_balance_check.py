@@ -2,6 +2,7 @@ from pathlib import Path
 
 from eaf_model.application.loaders import (
     load_default_metallic_mix,
+    load_default_process_parameters,
     load_default_scrap_catalog,
     load_default_steel_grades,
     load_selected_steel_grade,
@@ -10,6 +11,7 @@ from eaf_model.domain.eaf_charge import (
     calculate_charged_elements_and_oxides,
     calculate_refining_masses,
 )
+from eaf_model.domain.steel_refining.carbon import calculate_carbon_mass_balance
 
 BACKEND_DIR = Path(__file__).resolve().parents[1]
 DATA_DIR = BACKEND_DIR / "src" / "eaf_model" / "data"
@@ -32,7 +34,13 @@ def main() -> None:
 
     refining_masses = calculate_refining_masses(eaf_input, low_carbon_steel)
 
-    print(refining_masses)
+    process_parameters = load_default_process_parameters(
+        str(DATA_DIR / "default_process_parameters.json")
+    )
+
+    teste = calculate_carbon_mass_balance(refining_masses, process_parameters)
+
+    print(teste)
 
 
 if __name__ == "__main__":
