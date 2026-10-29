@@ -11,7 +11,7 @@ from eaf_model.domain.eaf_charge import (
     calculate_charged_elements_and_oxides,
     calculate_refining_masses,
 )
-from eaf_model.domain.steel_refining.manganese import calculate_manganese_mass_balance
+from eaf_model.domain.steel_refining.phosphorus import calculate_phosphorus_mass_balance
 
 BACKEND_DIR = Path(__file__).resolve().parents[1]
 DATA_DIR = BACKEND_DIR / "src" / "eaf_model" / "data"
@@ -38,7 +38,7 @@ def main() -> None:
 
     refining_masses = calculate_refining_masses(eaf_input, low_carbon_steel, process_parameters)
 
-    teste = calculate_manganese_mass_balance(refining_masses)
+    teste = calculate_phosphorus_mass_balance(refining_masses)
 
     print(teste)
 

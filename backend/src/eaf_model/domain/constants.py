@@ -24,6 +24,7 @@ _oxide_masses = {
     "al2o3": 101.960,
     "cao": 56.077,
     "mgo": 40.304,
+    "p2o5": 141.943,
 }
 
 OXIDE_MASSES_G_PER_MOL: Final = MappingProxyType(_oxide_masses)
