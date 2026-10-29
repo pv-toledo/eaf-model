@@ -11,7 +11,10 @@ from eaf_model.domain.eaf_charge import (
     calculate_charged_elements_and_oxides,
     calculate_refining_masses,
 )
+from eaf_model.domain.slag.slag_volume import calculate_slag_volume
+from eaf_model.domain.steel_refining.manganese import calculate_manganese_mass_balance
 from eaf_model.domain.steel_refining.phosphorus import calculate_phosphorus_mass_balance
+from eaf_model.domain.steel_refining.silicon import calculate_silicon_mass_balance
 
 BACKEND_DIR = Path(__file__).resolve().parents[1]
 DATA_DIR = BACKEND_DIR / "src" / "eaf_model" / "data"
@@ -38,9 +41,23 @@ def main() -> None:
 
     refining_masses = calculate_refining_masses(eaf_input, low_carbon_steel, process_parameters)
 
-    teste = calculate_phosphorus_mass_balance(refining_masses)
+    silicon_mass_balance = calculate_silicon_mass_balance(refining_masses)
+    manganese_mass_balance = calculate_manganese_mass_balance(refining_masses)
+    phosphorus_mass_balance = calculate_phosphorus_mass_balance(refining_masses)
 
-    print(teste)
+    # materials = load_default_materials(str(DATA_DIR / "default_materials_and_fluxes.json"))
+
+    # teste = calculate_lime_addition(process_parameters, eaf_input, silicon_mass_balance, materials)
+
+    slag_volume = calculate_slag_volume(
+        process_parameters,
+        eaf_input,
+        silicon_mass_balance,
+        manganese_mass_balance,
+        phosphorus_mass_balance,
+    )
+
+    print(slag_volume)
 
 
 if __name__ == "__main__":

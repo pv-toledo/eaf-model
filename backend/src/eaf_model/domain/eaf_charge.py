@@ -58,12 +58,9 @@ def calculate_charged_elements_and_oxides(
             if oxide_pct is None:
                 raise ValueError(f"Oxide '{oxide}' not informed for scrap '{scrap.id}'.")
 
-            oxides[oxide] += charged_amount_t * oxide_pct * yield_fraction / 100
+            oxides[oxide] += charged_amount_t * oxide_pct / 100
 
-    return {
-        "elements": {element: round(value, 2) for element, value in elements.items()},
-        "oxides": {oxide: round(value, 2) for oxide, value in oxides.items()},
-    }
+    return {"elements": elements, "oxides": oxides}
 
 
 def calculate_refining_masses(

@@ -3,6 +3,7 @@
     "electrode_kg_per_t_liquid": 2.0,
     "dust_loss_kg_per_t_charge": 15.0,
     "slag_feo_pct": 25.0,
+    "slag_basicity": 2.0,
     "ch4_nm3_per_t_charge": 5.0,
     "post_combustion_pct": 20.0,
     "electric_energy_loss_pct": 20.0
