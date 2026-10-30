@@ -31,6 +31,8 @@ def main() -> None:
 
     eaf_input = calculate_charged_elements_and_oxides(metallic_mix, scrap_catalog)
 
+    print(sum(eaf_input["elements"].values()))
+
     steel_grades = load_default_steel_grades(str(DATA_DIR / "default_steel_grades.json"))
 
     low_carbon_steel = load_selected_steel_grade(steel_grades)
