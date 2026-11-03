@@ -17,12 +17,19 @@ def calculate_slag_volume(
 
     charged_feo_kg = eaf_charged_elements["oxides"]["feo"] * 1000
     charged_mgo_kg = eaf_charged_elements["oxides"]["mgo"] * 1000
+    charged_cao_kg = eaf_charged_elements["oxides"]["cao"] * 1000
+
+    cao_for_basicity_correction_kg = (
+        (silicon_mass_balance.sio2_mass_kg + eaf_charged_elements["oxides"]["sio2"] * 1000)
+        * process_parameters.slag_bascity
+    ) - charged_cao_kg
 
     total_oxides_kg = (
         charged_oxides_kg
         + silicon_mass_balance.sio2_mass_kg
         + manganese_mass_balance.mno_mass_kg
         + phosphorus_mass_balance.p2o5_mass_kg
+        + cao_for_basicity_correction_kg
         - charged_feo_kg
         - charged_mgo_kg
     )
