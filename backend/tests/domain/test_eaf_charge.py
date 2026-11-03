@@ -20,4 +20,4 @@ def test_metrics() -> None:
         metallic_mix, scrap_catalog, process_parameters
     )
 
-    assert len(charged_elements_and_oxides) == 2
+    assert len(charged_elements_and_oxides) == 3
