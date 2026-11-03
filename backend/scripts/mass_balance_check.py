@@ -1,3 +1,4 @@
+from dataclasses import asdict
 from pathlib import Path
 
 from eaf_model.application.loaders import (
@@ -29,19 +30,25 @@ def main() -> None:
 
     scrap_catalog = load_default_scrap_catalog(str(DATA_DIR / "default_scrap_catalog.json"))
 
-    eaf_input = calculate_charged_elements_and_oxides(metallic_mix, scrap_catalog)
+    process_parameters = load_default_process_parameters(
+        str(DATA_DIR / "default_process_parameters.json")
+    )
 
-    print(sum(eaf_input["elements"].values()))
+    eaf_input = calculate_charged_elements_and_oxides(
+        metallic_mix, scrap_catalog, process_parameters
+    )
 
     steel_grades = load_default_steel_grades(str(DATA_DIR / "default_steel_grades.json"))
 
     low_carbon_steel = load_selected_steel_grade(steel_grades)
 
-    process_parameters = load_default_process_parameters(
-        str(DATA_DIR / "default_process_parameters.json")
-    )
+    refining_masses = calculate_refining_masses(eaf_input, low_carbon_steel)
 
-    refining_masses = calculate_refining_masses(eaf_input, low_carbon_steel, process_parameters)
+    print(refining_masses)
+
+    total = sum(eaf_input["elements"].values()) - sum(asdict(refining_masses).values())
+
+    print(total)
 
     silicon_mass_balance = calculate_silicon_mass_balance(refining_masses)
     manganese_mass_balance = calculate_manganese_mass_balance(refining_masses)

@@ -26,6 +26,7 @@ class RefiningMasses:
 def calculate_charged_elements_and_oxides(
     metallic_mix: dict[str, float],
     scrap_catalog: list[Scrap],
+    process_parameters: ProcessParameters,
 ) -> ChargedElements:
     elements = dict.fromkeys(elements_in_steel, 0.0)
     oxides = dict.fromkeys(oxides_in_slag, 0.0)
@@ -60,22 +61,22 @@ def calculate_charged_elements_and_oxides(
 
             oxides[oxide] += charged_amount_t * oxide_pct / 100
 
+    total_input_mass_t = sum(elements.values())
+
+    electrode_carbon_pick_up_t = (
+        total_input_mass_t * process_parameters.electrode_kg_per_t_liquid / 1000
+    )
+
+    elements["c"] += electrode_carbon_pick_up_t
+
     return {"elements": elements, "oxides": oxides}
 
 
 def calculate_refining_masses(
-    eaf_input_masses: ChargedElements, steel_grade: Steel, process_parameters: ProcessParameters
+    eaf_input_masses: ChargedElements, steel_grade: Steel
 ) -> RefiningMasses:
     input_element_masses = eaf_input_masses["elements"].copy()
     total_input_mass = sum(input_element_masses.values())
-
-    electrode_carbon_pick_up_t = (
-        total_input_mass * process_parameters.electrode_kg_per_t_liquid
-    ) / 1000
-
-    input_element_masses["c"] += electrode_carbon_pick_up_t
-
-    total_input_mass += electrode_carbon_pick_up_t
 
     target_eaf_masses: dict[str, float] = {}
 
@@ -91,7 +92,7 @@ def calculate_refining_masses(
 
     return RefiningMasses(
         **{
-            key: input_element_masses[key] - target_mass
+            key: max(input_element_masses[key] - target_mass, 0.0)
             for key, target_mass in target_eaf_masses.items()
         }
     )
