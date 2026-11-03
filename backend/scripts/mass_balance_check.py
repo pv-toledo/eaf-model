@@ -1,4 +1,3 @@
-from dataclasses import asdict
 from pathlib import Path
 
 from eaf_model.application.loaders import (
@@ -38,6 +37,8 @@ def main() -> None:
         metallic_mix, scrap_catalog, process_parameters
     )
 
+    print(eaf_input["liquid_steel_t"])
+
     steel_grades = load_default_steel_grades(str(DATA_DIR / "default_steel_grades.json"))
 
     low_carbon_steel = load_selected_steel_grade(steel_grades)
@@ -46,9 +47,7 @@ def main() -> None:
 
     print(refining_masses)
 
-    total = sum(eaf_input["elements"].values()) - sum(asdict(refining_masses).values())
-
-    print(total)
+    # print(total)
 
     silicon_mass_balance = calculate_silicon_mass_balance(refining_masses)
     manganese_mass_balance = calculate_manganese_mass_balance(refining_masses)

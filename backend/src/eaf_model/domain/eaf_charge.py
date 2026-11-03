@@ -12,6 +12,7 @@ oxides_in_slag = ["cao", "sio2", "al2o3", "mgo", "feo"]
 class ChargedElements(TypedDict):
     elements: dict[str, float]
     oxides: dict[str, float]
+    liquid_steel_t: float
 
 
 @dataclass(frozen=True)
@@ -31,52 +32,62 @@ def calculate_charged_elements_and_oxides(
     elements = dict.fromkeys(elements_in_steel, 0.0)
     oxides = dict.fromkeys(oxides_in_slag, 0.0)
 
-    for scrap in scrap_catalog:
-        charged_amount_t = metallic_mix.get(scrap.id)
+    liquid_steel_t = 0.0
 
-        if charged_amount_t is None:
-            continue
+    scrap_by_id = {scrap.id: scrap for scrap in scrap_catalog}
 
-        metallic_yield = scrap.metallic_yield_pct
+    for scrap_id, charged_amount_t in metallic_mix.items():
+        scrap = scrap_by_id.get(scrap_id)
 
-        if metallic_yield is None:
-            raise ValueError(f"Metallic yield not informed for scrap '{scrap.id}'.")
+        if scrap is None:
+            raise ValueError(f"Scrap '{scrap_id}' not found in scrap catalog.")
+
+        metallic_yield_pct = scrap.metallic_yield_pct
+
+        if metallic_yield_pct is None:
+            raise ValueError(f"Metallic yield not informed for scrap '{scrap_id}'.")
 
         composition_pct = scrap.composition_pct
-        yield_fraction = metallic_yield / 100
+
+        scrap_liquid_steel_t = charged_amount_t * metallic_yield_pct / 100
+
+        liquid_steel_t += scrap_liquid_steel_t
 
         for element in elements:
             element_pct = composition_pct[element]
 
             if element_pct is None:
-                raise ValueError(f"Element '{element}' not informed for scrap '{scrap.id}'.")
+                raise ValueError(f"Element '{element}' not informed for scrap '{scrap_id}'.")
 
-            elements[element] += charged_amount_t * element_pct * yield_fraction / 100
+            elements[element] += scrap_liquid_steel_t * element_pct / 100
 
         for oxide in oxides:
             oxide_pct = composition_pct[oxide]
 
             if oxide_pct is None:
-                raise ValueError(f"Oxide '{oxide}' not informed for scrap '{scrap.id}'.")
+                raise ValueError(f"Oxide '{oxide}' not informed for scrap '{scrap_id}'.")
 
             oxides[oxide] += charged_amount_t * oxide_pct / 100
 
-    total_input_mass_t = sum(elements.values())
-
     electrode_carbon_pick_up_t = (
-        total_input_mass_t * process_parameters.electrode_kg_per_t_liquid / 1000
+        liquid_steel_t * process_parameters.electrode_kg_per_t_liquid / 1000
     )
 
     elements["c"] += electrode_carbon_pick_up_t
+    liquid_steel_t += electrode_carbon_pick_up_t
 
-    return {"elements": elements, "oxides": oxides}
+    return {
+        "elements": elements,
+        "oxides": oxides,
+        "liquid_steel_t": liquid_steel_t,
+    }
 
 
 def calculate_refining_masses(
     eaf_input_masses: ChargedElements, steel_grade: Steel
 ) -> RefiningMasses:
     input_element_masses = eaf_input_masses["elements"].copy()
-    total_input_mass = sum(input_element_masses.values())
+    total_input_mass = eaf_input_masses["liquid_steel_t"]
 
     target_eaf_masses: dict[str, float] = {}
 

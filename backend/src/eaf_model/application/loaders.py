@@ -21,7 +21,7 @@ def load_default_metallic_mix(
         metallic_mix = {}
 
         for item in charged_scraps:
-            metallic_mix[item["scrap_id"]] = item["amount_charged_t"] * basket_capacity_t / 100
+            metallic_mix[item["scrap_id"]] = item["pct_of_metallic_mix"] * basket_capacity_t / 100
         return metallic_mix
 
 

@@ -1,9 +1,30 @@
 [
-  { "amount_charged_t": 25.0, "scrap_id": "shredded" },
-  { "amount_charged_t": 20.0, "scrap_id": "heavy_melt_scrap_1" },
-  { "amount_charged_t": 15.0, "scrap_id": "pig_iron" },
-  { "amount_charged_t": 15.0, "scrap_id": "automotive_stamping_bundles" },
-  { "amount_charged_t": 10.0, "scrap_id": "heavy_melt_scrap_2" },
-  { "amount_charged_t": 10.0, "scrap_id": "hbi" },
-  { "amount_charged_t": 5.0, "scrap_id": "commercial_scrap" }
+  {
+    "pct_of_metallic_mix": 25.0,
+    "scrap_id": "shredded"
+  },
+  {
+    "pct_of_metallic_mix": 20.0,
+    "scrap_id": "heavy_melt_scrap_1"
+  },
+  {
+    "pct_of_metallic_mix": 15.0,
+    "scrap_id": "pig_iron"
+  },
+  {
+    "pct_of_metallic_mix": 15.0,
+    "scrap_id": "automotive_stamping_bundles"
+  },
+  {
+    "pct_of_metallic_mix": 10.0,
+    "scrap_id": "heavy_melt_scrap_2"
+  },
+  {
+    "pct_of_metallic_mix": 10.0,
+    "scrap_id": "hbi"
+  },
+  {
+    "pct_of_metallic_mix": 5.0,
+    "scrap_id": "commercial_scrap"
+  }
 ]
