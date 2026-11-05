@@ -15,6 +15,7 @@ from eaf_model.domain.eaf_charge import (
 from eaf_model.domain.slag.slag_adjustment import (
     calculate_slag_and_quicklime_additions,
 )
+from eaf_model.domain.steel_refining.iron import calculate_iron_mass_balance
 from eaf_model.domain.steel_refining.manganese import calculate_manganese_mass_balance
 from eaf_model.domain.steel_refining.phosphorus import calculate_phosphorus_mass_balance
 from eaf_model.domain.steel_refining.silicon import calculate_silicon_mass_balance
@@ -52,7 +53,7 @@ def main() -> None:
 
     materials = load_default_materials(str(DATA_DIR / "default_materials_and_fluxes.json"))
 
-    teste = calculate_slag_and_quicklime_additions(
+    slag_info = calculate_slag_and_quicklime_additions(
         process_parameters,
         eaf_input,
         silicon_mass_balance,
@@ -61,7 +62,9 @@ def main() -> None:
         materials,
     )
 
-    print(teste)
+    iron_mass_balance = calculate_iron_mass_balance(slag_info.slag_mass_kg, process_parameters)
+
+    print(iron_mass_balance)
 
 
 if __name__ == "__main__":
