@@ -5,8 +5,8 @@ from eaf_model.domain.materials import Scrap
 from eaf_model.domain.process import ProcessParameters
 from eaf_model.domain.steel_grades import Steel
 
-elements_in_steel = ["fe", "c", "si", "mn", "p", "s"]
-oxides_in_slag = ["cao", "sio2", "al2o3", "mgo", "feo"]
+elements_in_steel_from_scrap = ["fe", "c", "si", "mn", "p", "s"]
+oxides_in_slag_from_scrap = ["cao", "sio2", "al2o3", "mgo", "feo"]
 
 
 class ChargedElements(TypedDict):
@@ -29,8 +29,8 @@ def calculate_charged_elements_and_oxides(
     scrap_catalog: list[Scrap],
     process_parameters: ProcessParameters,
 ) -> ChargedElements:
-    elements = dict.fromkeys(elements_in_steel, 0.0)
-    oxides = dict.fromkeys(oxides_in_slag, 0.0)
+    elements = dict.fromkeys(elements_in_steel_from_scrap, 0.0)
+    oxides = dict.fromkeys(oxides_in_slag_from_scrap, 0.0)
 
     liquid_steel_t = 0.0
 

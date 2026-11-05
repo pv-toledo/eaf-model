@@ -4,27 +4,23 @@
         "name": "Calcitic quicklime",
         "price_usd_per_t": 150.0,
         "composition_pct": {
-            "s": 0.03,
             "cao": 94.00,
             "sio2": 1.00,
             "al2o3": 0.50,
             "mgo": 1.50
         }
     },
-
     {
         "id": "dolomitic_quicklime",
         "name": "Dolomitic quicklime",
         "price_usd_per_t": 155.0,
         "composition_pct": {
-            "s": 0.03,
             "cao": 55.00,
             "sio2": 1.50,
             "al2o3": 0.50,
             "mgo": 40.00
         }
     },
-
     {
         "id": "sic",
         "name": "SiC",
@@ -37,7 +33,6 @@
             "feo": 1.00
         }
     },
-
     {
         "id": "fesi75",
         "name": "FeSi 75",
@@ -50,7 +45,6 @@
             "p": 0.01
         }
     },
-
     {
         "id": "fesimn",
         "name": "FeSiMn",

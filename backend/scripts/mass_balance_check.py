@@ -12,7 +12,9 @@ from eaf_model.domain.eaf_charge import (
     calculate_charged_elements_and_oxides,
     calculate_refining_masses,
 )
-from eaf_model.domain.slag.basicity_adjustment import calculate_slag_additions
+from eaf_model.domain.slag.slag_adjustment import (
+    calculate_slag_and_quicklime_additions,
+)
 from eaf_model.domain.steel_refining.manganese import calculate_manganese_mass_balance
 from eaf_model.domain.steel_refining.phosphorus import calculate_phosphorus_mass_balance
 from eaf_model.domain.steel_refining.silicon import calculate_silicon_mass_balance
@@ -38,8 +40,6 @@ def main() -> None:
         metallic_mix, scrap_catalog, process_parameters
     )
 
-    # print(eaf_input["liquid_steel_t"])
-
     steel_grades = load_default_steel_grades(str(DATA_DIR / "default_steel_grades.json"))
 
     low_carbon_steel = load_selected_steel_grade(steel_grades)
@@ -52,7 +52,7 @@ def main() -> None:
 
     materials = load_default_materials(str(DATA_DIR / "default_materials_and_fluxes.json"))
 
-    teste = calculate_slag_additions(
+    teste = calculate_slag_and_quicklime_additions(
         process_parameters,
         eaf_input,
         silicon_mass_balance,
@@ -62,16 +62,6 @@ def main() -> None:
     )
 
     print(teste)
-
-    # slag_volume = calculate_slag_volume(
-    #     process_parameters,
-    #     eaf_input,
-    #     silicon_mass_balance,
-    #     manganese_mass_balance,
-    #     phosphorus_mass_balance,
-    # )
-
-    # print(slag_volume)
 
 
 if __name__ == "__main__":
