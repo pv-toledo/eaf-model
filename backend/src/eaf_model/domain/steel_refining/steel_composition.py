@@ -1,13 +1,7 @@
 from dataclasses import asdict, dataclass
 
 from eaf_model.domain.constants import _element_masses, _oxide_masses
-
-# from eaf_model.domain.steel_refining.manganese import ManganeseMassBalance
-# from eaf_model.domain.steel_refining.phosphorus import PhosphorusMassBalance
-# from eaf_model.domain.steel_refining.silicon import SiliconMassBalance
 from eaf_model.domain.eaf_charge import ChargedElements, RefiningMasses
-
-# from eaf_model.domain.steel_refining.carbon import CarbonMassBalance
 from eaf_model.domain.steel_refining.iron import IronMassBalance
 
 
@@ -23,10 +17,6 @@ elements_in_steel = ("fe", "c", "si", "mn", "p", "s")
 def calculate_steel_composition(
     eaf_charge: ChargedElements,
     refining_masses: RefiningMasses,
-    # carbon_mass_balance: CarbonMassBalance,
-    # manganese_mass_balance: ManganeseMassBalance,
-    # silicon_mass_balance: SiliconMassBalance,
-    # phosphorus_mass_balance: PhosphorusMassBalance,
     iron_mass_balance: IronMassBalance,
 ):
 

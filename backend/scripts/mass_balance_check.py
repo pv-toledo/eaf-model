@@ -15,8 +15,10 @@ from eaf_model.domain.eaf_charge import (
 from eaf_model.domain.slag.slag_adjustment import (
     calculate_slag_and_quicklime_additions,
 )
+from eaf_model.domain.steel_refining.carbon import calculate_carbon_mass_balance
 from eaf_model.domain.steel_refining.iron import calculate_iron_mass_balance
 from eaf_model.domain.steel_refining.manganese import calculate_manganese_mass_balance
+from eaf_model.domain.steel_refining.oxygen import calculate_oxygen_mass_balance
 from eaf_model.domain.steel_refining.phosphorus import calculate_phosphorus_mass_balance
 from eaf_model.domain.steel_refining.silicon import calculate_silicon_mass_balance
 from eaf_model.domain.steel_refining.steel_composition import calculate_steel_composition
@@ -67,9 +69,19 @@ def main() -> None:
         slag_info.slag_mass_kg, process_parameters, eaf_input
     )
 
+    carbon_mass_balance = calculate_carbon_mass_balance(refining_masses, process_parameters)
+
+    oxygen_mass_balance = calculate_oxygen_mass_balance(
+        carbon_mass_balance,
+        manganese_mass_balance,
+        silicon_mass_balance,
+        phosphorus_mass_balance,
+        iron_mass_balance,
+    )
+
     steel_composition = calculate_steel_composition(eaf_input, refining_masses, iron_mass_balance)
 
-    print(steel_composition)
+    print(oxygen_mass_balance)
 
 
 if __name__ == "__main__":
