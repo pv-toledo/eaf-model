@@ -18,7 +18,7 @@ _element_masses = {
 ELEMENT_MASSES_G_PER_MOL: Final = MappingProxyType(_element_masses)
 
 _oxide_masses = {
-    "feo": 159.687,
+    "feo": 71.844,
     "sio2": 60.084,
     "mno": 70.937,
     "al2o3": 101.960,

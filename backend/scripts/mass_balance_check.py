@@ -19,6 +19,7 @@ from eaf_model.domain.steel_refining.iron import calculate_iron_mass_balance
 from eaf_model.domain.steel_refining.manganese import calculate_manganese_mass_balance
 from eaf_model.domain.steel_refining.phosphorus import calculate_phosphorus_mass_balance
 from eaf_model.domain.steel_refining.silicon import calculate_silicon_mass_balance
+from eaf_model.domain.steel_refining.steel_composition import calculate_steel_composition
 
 BACKEND_DIR = Path(__file__).resolve().parents[1]
 DATA_DIR = BACKEND_DIR / "src" / "eaf_model" / "data"
@@ -62,9 +63,13 @@ def main() -> None:
         materials,
     )
 
-    iron_mass_balance = calculate_iron_mass_balance(slag_info.slag_mass_kg, process_parameters)
+    iron_mass_balance = calculate_iron_mass_balance(
+        slag_info.slag_mass_kg, process_parameters, eaf_input
+    )
 
-    print(iron_mass_balance)
+    steel_composition = calculate_steel_composition(eaf_input, refining_masses, iron_mass_balance)
+
+    print(steel_composition)
 
 
 if __name__ == "__main__":
