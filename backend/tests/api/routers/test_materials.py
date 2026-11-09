@@ -24,3 +24,20 @@ def test_list_scraps_from_default_catalog():
     assert "pig_iron" in scrap_ids
     assert "shredded" in scrap_ids
     assert "hbi" in scrap_ids
+
+
+def test_list_materials_and_fluxes_from_default_catalog():
+    response = client.get("/materials")
+
+    assert response.status_code == 200
+
+    data = response.json()
+
+    assert isinstance(data, list)
+    assert len(data) > 0
+
+    materials_ids = {material["id"] for material in data}
+
+    assert "calcitic_quicklime" in materials_ids
+    assert "dolomitic_quicklime" in materials_ids
+    assert "sic" in materials_ids
