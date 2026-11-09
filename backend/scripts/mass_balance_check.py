@@ -21,7 +21,8 @@ from eaf_model.domain.steel_refining.manganese import calculate_manganese_mass_b
 from eaf_model.domain.steel_refining.oxygen import calculate_oxygen_mass_balance
 from eaf_model.domain.steel_refining.phosphorus import calculate_phosphorus_mass_balance
 from eaf_model.domain.steel_refining.silicon import calculate_silicon_mass_balance
-from eaf_model.domain.steel_refining.steel_composition import calculate_steel_composition
+
+# from eaf_model.domain.steel_refining.steel_composition import calculate_steel_composition
 
 BACKEND_DIR = Path(__file__).resolve().parents[1]
 DATA_DIR = BACKEND_DIR / "src" / "eaf_model" / "data"
@@ -79,7 +80,7 @@ def main() -> None:
         iron_mass_balance,
     )
 
-    steel_composition = calculate_steel_composition(eaf_input, refining_masses, iron_mass_balance)
+    # steel_composition = calculate_steel_composition(eaf_input, refining_masses, iron_mass_balance)
 
     print(oxygen_mass_balance)
 
