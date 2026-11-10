@@ -52,7 +52,7 @@ def calculate_slag_and_quicklime_additions(
 
     slag_oxides_kg["sio2"] += silicon_mass_balance.sio2_mass_kg
 
-    target_basicity = process_parameters.slag_bascity
+    target_basicity = process_parameters.slag_basicity
 
     target_feo_fraction = process_parameters.slag_feo_pct / 100
 

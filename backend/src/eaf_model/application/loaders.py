@@ -85,7 +85,7 @@ def load_default_process_parameters(path: str) -> ProcessParameters:
             dust_loss_kg_per_t_charge=raw_data["dust_loss_kg_per_t_charge"],
             slag_feo_pct=raw_data["slag_feo_pct"],
             slag_mgo_saturation_pct=raw_data["slag_mgo_saturation_pct"],
-            slag_bascity=raw_data["slag_basicity"],
+            slag_basicity=raw_data["slag_basicity"],
             ch4_nm3_per_t_charge=raw_data["ch4_nm3_per_t_charge"],
             post_combustion_pct=raw_data["post_combustion_pct"],
             electrode_kg_per_t_liquid=raw_data["electrode_kg_per_t_liquid"],
