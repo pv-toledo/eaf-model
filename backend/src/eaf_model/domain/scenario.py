@@ -3,5 +3,5 @@ from dataclasses import dataclass
 
 @dataclass(frozen=True)
 class ChargedScrap:
-    amount_charged_t: float
+    pct_of_metallic_mix: float
     scrap_id: str

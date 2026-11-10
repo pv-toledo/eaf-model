@@ -1,30 +1,54 @@
 [
   {
+    "pct_of_metallic_mix": 15.0,
+    "scrap_id": "pig_iron"
+  },
+  {
     "pct_of_metallic_mix": 25.0,
     "scrap_id": "shredded"
   },
   {
-    "pct_of_metallic_mix": 20.0,
-    "scrap_id": "heavy_melt_scrap_1"
-  },
-  {
-    "pct_of_metallic_mix": 15.0,
-    "scrap_id": "pig_iron"
+    "pct_of_metallic_mix": 0.0,
+    "scrap_id": "recovered_scrap"
   },
   {
     "pct_of_metallic_mix": 15.0,
     "scrap_id": "automotive_stamping_bundles"
   },
   {
+    "pct_of_metallic_mix": 5.0,
+    "scrap_id": "commercial_scrap"
+  },
+  {
+    "pct_of_metallic_mix": 20.0,
+    "scrap_id": "heavy_melt_scrap_1"
+  },
+  {
     "pct_of_metallic_mix": 10.0,
     "scrap_id": "heavy_melt_scrap_2"
+  },
+  {
+    "pct_of_metallic_mix": 0.0,
+    "scrap_id": "pressed_bundles"
+  },
+  {
+    "pct_of_metallic_mix": 0.0,
+    "scrap_id": "sheared_scrap"
+  },
+  {
+    "pct_of_metallic_mix": 0.0,
+    "scrap_id": "steel_turnings"
+  },
+  {
+    "pct_of_metallic_mix": 0.0,
+    "scrap_id": "dri"
   },
   {
     "pct_of_metallic_mix": 10.0,
     "scrap_id": "hbi"
   },
   {
-    "pct_of_metallic_mix": 5.0,
-    "scrap_id": "commercial_scrap"
+    "pct_of_metallic_mix": 0.0,
+    "scrap_id": "cast_iron_scrap"
   }
 ]

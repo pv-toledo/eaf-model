@@ -92,12 +92,12 @@ def load_default_process_parameters(path: str) -> ProcessParameters:
         )
 
 
-def load_default_scenario(path: str) -> list[ChargedScrap]:
+def load_default_charged_scraps(path: str) -> list[ChargedScrap]:
     with open(path) as file:
         raw_data = json.load(file)
 
         return [
-            ChargedScrap(scrap_id=item["scrap_id"], amount_charged_t=item["amount_charged_t"])
+            ChargedScrap(scrap_id=item["scrap_id"], pct_of_metallic_mix=item["pct_of_metallic_mix"])
             for item in raw_data
         ]
 
