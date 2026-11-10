@@ -81,7 +81,7 @@ def load_default_process_parameters(path: str) -> ProcessParameters:
 
         return ProcessParameters(
             tap_temperature_c=raw_data["tap_temperature_c"],
-            electric_energy_loss_pct=raw_data["electrode_kg_per_t_liquid"],
+            electric_energy_loss_pct=raw_data["electric_energy_loss_pct"],
             dust_loss_kg_per_t_charge=raw_data["dust_loss_kg_per_t_charge"],
             slag_feo_pct=raw_data["slag_feo_pct"],
             slag_mgo_saturation_pct=raw_data["slag_mgo_saturation_pct"],
